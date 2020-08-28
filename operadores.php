@@ -1,2 +1,0 @@
-teste
-echo "ola mundo"
