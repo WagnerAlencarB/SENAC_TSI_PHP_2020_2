@@ -18,14 +18,13 @@ if ($query) {
     echo mysqli_connect_error();
 }
 
-$contato = ['nome' => 'Luiz Bono','whatsapp' => '5511900000000'];
 
 if (mysqli_query($db, 
 "
 INSERT INTO contatos 
     (nome, whatsapp)
 VALUES
-    ('{$contato['nome']}','{$contato['whatsapp']}')"))
+    ('{$_POST['nm']}','{$_POST['whats']}')"))
 {
     echo "contato inserido com sucesso!!";
 }
@@ -48,10 +47,12 @@ while ($registro = $query->fetch_assoc() ){
 echo '</table>';
 if(mysqli_query($db, '
                     DELETE FROM contatos
-                    WHERE id')){
+                    WHERE id =0')){
              echo "registro apagado com sucesso!" ;      
 }else{
     echo" não foi possivel apagar o registro";
 }
 
 var_dump($_POST);
+
+echo "<br><br>Nome enviado: {$_POST['nm']}, whatsapp: {$_POST['whats']}";
