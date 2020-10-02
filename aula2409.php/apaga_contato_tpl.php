@@ -8,7 +8,7 @@
 
 <body>
     <center>
-        <h1> <?php echo $msg; ?> </h1>
+        <h1> <?php echo $msg ?> </h1>
         <br>
         <a href='listacontato.php'>voltar</a>
     </center>
