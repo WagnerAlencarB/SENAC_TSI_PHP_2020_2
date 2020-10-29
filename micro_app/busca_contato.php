@@ -1,7 +1,7 @@
 <?php
 
 require_once 'db.php';
-include 'busca_contato.html';
+include 'busca_contato_form_tpl.php';
 
 if (isset($_POST['argumento'])) {
     $objStmt = $objBanco->prepare('SELECT
@@ -23,5 +23,5 @@ while ($reg = $objStmt->fetch(PDO::FETCH_ASSOC)) {
     }
 $tabela = $tabela ?? array();
 
-include 'busca_contato_tpl.php';
+include 'busca_contato_resultado_tpl.php';
 }
